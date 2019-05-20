@@ -8,8 +8,20 @@
 //
 // See HW4 writeup for more hints and details.
 class MusicScreen {
-  constructor() {
+  constructor(container) {
+	  this.container = container;
+	  this.gif;
     // TODO(you): Implement the constructor and add fields as necessary.
+	  this.audio = new AudioPlayer();
+	  let play = new button();
+  }
+  hide() {
+    this.container.classList.add('inactive');
+  }
+  show(){
+    this.container.classList.remove('inactive');
+	document.getElementById('background').classList.remove('inactive'); 
+    this.audio.play();
   }
   // TODO(you): Add methods as necessary.
 }
