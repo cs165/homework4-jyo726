@@ -1,10 +1,36 @@
-// This class will represent the menu screen that you see when you first load
-// the music visualizer.
+// TODO(you): Modify the class in whatever ways necessary to implement
+// the flashcard app behavior.
 //
-// See HW4 writeup for more hints and details.
+// You may need to do things such as:
+// - Changing the constructor parameters
+// - Adding methods
+// - Adding additional fields
+
 class MenuScreen {
-  constructor() {
-    // TODO(you): Implement the constructor and add fields as necessary.
+  constructor(containerElement) {
+    this.containerElement = containerElement;
+	
+	for(let i = 0; i < FLASHCARD_DECKS.length; i++)
+	{ 
+	    let div = document.createElement('div'); 
+        div.className = "menu-buttons";
+        div.appendChild(document.createTextNode(FLASHCARD_DECKS[i].title)); 
+        div.addEventListener('click', function() 
+		{
+          app.flashcards.makeCards(i); 
+          app.menu.hide(); 
+          app.flashcards.show(); 
+
+        }, false);
+        document.getElementById("choices").appendChild(div);
+    }
   }
-  // TODO(you): Add methods as necessary.
+
+  show() {
+    this.containerElement.classList.remove('inactive');
+  }
+
+  hide() {
+    this.containerElement.classList.add('inactive');
+  }
 }
