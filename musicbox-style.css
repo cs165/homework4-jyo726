@@ -20,10 +20,10 @@ TODO(you): Write any additional styles you need here.
 }
 #music {
 	background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height:100%;
-    width:100%;	
+    	background-position: center;
+    	background-repeat: no-repeat;
+    	height:100%;
+    	width:100%;	
 }
 #area {
 	background-size: cover;
